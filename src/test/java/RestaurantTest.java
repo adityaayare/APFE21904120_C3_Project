@@ -60,25 +60,4 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    //<<<<<<<<<<<<<<<<<<<<<<<TOTAL ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    @Test
-    public void order_value_should_return_total_cost_of_items_selected() {
-        assertEquals(390, restaurant.getTotalOrderValue(listOfItems));
-    }
-
-    @Test
-    public void order_value_should_return_reduced_total_cost_when_an_item_removed() {
-        int totalCost = restaurant.getTotalOrderValue(listOfItems);
-        int costOfRemovedItem = listOfItems.get(1).getPrice();
-        listOfItems.remove(1);
-        assertEquals(totalCost - costOfRemovedItem, restaurant.getTotalOrderValue(listOfItems));
-    }
-
-    @Test
-    public void order_value_should_return_zero_when_all_items_removed(){
-        listOfItems.removeAll(listOfItems);
-        assertEquals(0,restaurant.getTotalOrderValue(listOfItems));
-    }
-    //<<<<<<<<<<<<<<<<<<<<<<<TOTAL ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
