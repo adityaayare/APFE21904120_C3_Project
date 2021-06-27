@@ -98,4 +98,11 @@ public class Restaurant {
         return name;
     }
 
+    public int getTotalOrderValue(List<Item> item) {
+        int totalSum = 0;
+        for (Item bakedItem : item) {
+            totalSum += bakedItem.getPrice();
+        }
+        return totalSum;
+    }
 }
